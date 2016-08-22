@@ -3,8 +3,21 @@
   <head>
     <title>color-map</title>
     <script src="js/main.js"></script>
+    <style>
+    .inb {
+      display: inline-block;
+    }
+    </style>
   </head>
   <body>
     <canvas id="color-map"></canvas>
+    <div>
+      <div class="inb">Discord</div>
+      <div id="discord" class="inb">0</div>
+    </div>
+    <div>
+      <button type="button" onClick="color_map.core.doshuffle()">Shuffle</button>
+      <button type="button" onClick="color_map.core.greet()">Hello</button>
+    </div>
   </body>
 </html>
