@@ -15,12 +15,15 @@
 
   :hooks [leiningen.cljsbuild]
 
-  :cljsbuild
-  {:builds [{:source-paths ["src"]
-                :figwheel true
-                :compiler
-                {:output-to "js/main.js"
-                 :output-dir "out"
-                 :main "color_map.core"
-                 :optimizations :none
-                 :pretty-print true}}]})
+  :cljsbuild {:builds {:dev {:source-paths ["src"]
+                             :figwheel true
+                             :compiler {:output-to "js/main.js"
+                                        :output-dir "out"
+                                        :main "color_map.core"
+                                        :optimizations :none
+                                        :pretty-print true}}
+                       :min {:source-paths ["src"]
+                             :compiler {:main "color_map.core"
+                                        :output-to "dist/js/main.js"
+                                        :optimizations :advanced
+                                        :pretty-print false}}}})
